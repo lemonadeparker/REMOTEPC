@@ -1,196 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practical Journal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@700&family=Roboto:wght@700&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-  <style>
-    /* body {
-      background-color: black;
-      text-align: center;
-      color: beige;
-    } */
-    body, h1, h2, p,div,fieldset{
-            margin: 0;
-            padding: 0;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
             text-align: center;
-            
+            padding-top: 50%;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        .nav {
-            background-color: #444;
-            text-align: center;
-            padding: 10px;
-        }
-    .menu-button {
-      cursor: pointer;
-      margin: 10px;
-      padding: 5px;
-      background-color: #333;
-      color: beige;
-      border: 1px solid beige;
-      border-radius: 5px;
-    }
-
-    .submenu {
-      display: none;
-      transition: display 2s; /* Slow transition for the display property */
-    }
-    a{
-        text-decoration: none;
-        list-style-type: none
-        
-    }
-    .bread{
-      display: inline-block;
-                outline: 0;
-                border: 0;
-                cursor: pointer;
-                transition: box-shadow 0.15s ease,transform 0.15s ease;
-                will-change: box-shadow,transform;
-                background: #ffffff;
-                box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
-                height: 48px;
-                width: 80%;
-                padding: 0 32px;
-                font-size: 14px;
-                font-family: 'Martian Mono', monospace;
-                border-radius: 6px;
-                color: #36395a; 
-                transition: box-shadow 0.15s ease,transform 0.15s ease;
-                :hover {
-                    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
-                    transform: translateY(-2px);
-                }
-                :active{
-                    box-shadow: inset 0px 3px 7px #d6d6e7;
-                    transform: translateY(2px);
-                }
+        fieldset {
+  margin: 20px;
+  padding: 0 10px 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #666;
+  padding-top: 10px;
 }
-
-/* CSS */
-.button-86 {
-  display: inline-block;
-                outline: 0;
-                border: 0;
-                cursor: pointer;
-                transition: box-shadow 0.15s ease,transform 0.15s ease;
-                will-change: box-shadow,transform;
-                background: #ffffff;
-                box-shadow: 0px 2px 4px rgba(240, 239, 244, 0.4), 0px 7px 13px -3px rgba(152, 105, 255, 0.3), inset 0px -3px 0px #767171;
-                height: 48px;
-                width: 80%;
-                padding: 0 32px;
-                font-size: 19px;
-                font-family: 'Martian Mono', monospace;
-                font-weight: bolder ;
-                
-                border-radius: 6px;
-                color: #000000;
-                transition: box-shadow 0.15s ease,transform 0.15s ease;
-                :hover {
-                    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.4), 0px 7px 13px -3px rgba(255, 255, 255, 0.3), inset 0px -3px 0px #d6d6e7;
-                    transform: translateY(-2px);
-                }
-                :active{
-                    box-shadow: inset 0px 3px 7px #d6d6e7;
-                    transform: translateY(2px);
-                }}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-  </style>
+    </style>
 </head>
 <body>
-  <header><a href="https://garwarecollege.mespune.in"><img src="haha.png" width="50%" class="vl"></a>
-  <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ;" >Physics Department</h1><br><br>
-  <p class="nav">“The laws of physics is the canvas God laid down on which to paint his masterpiece”- Dan Brown.</p>
-</header>
-  <fieldset style="padding: 10%;"><br>
-    <div class="button-86" role="button" id="p1">Paper-I</div><br>
-    <div class="submenu" id="p1-submenu">
-        <ul><br><br>
-            <li><a href="y.html" class="bread">'Y' by vibration of wooden scale</a></li> <br><br>
-            <li><a href="mb.html" class="bread">Moment of inertia by bifilar suspension</a></li><br><br>
-            <li><a href="sf.html" class="bread">Surface tension by Fergusson Method</a></li><br><br>
-            <li><a href="sa.html" class="bread">Self Induction by Anderson's bridge</a></li><br><br>
-            <li><a href="ct.html" class="bread">Core losses in Transformers</a></li><br><br>
-          </ul>
-    </div><br>
+    <fieldset>
+    <img src="haha.png" style="width: 50%;"> 
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br><br>
 
-    <div class="button-86" role="button" id="p2">Paper-II</div><br>
-    <div class="submenu" id="p2-submenu">
-      <ul><br>
-        <li><a href="y.html" class="bread">Factorial of a number using simple and recursive method</a></li> <br><br>
-            <li><a href="mb.html" class="bread">To find out first 100 Prime Numbers</a></li><br><br>
-            <li><a href="sf.html" class="bread">Position time data using kinematic equations</a></li><br><br>
-            <li><a href="sa.html" class="bread">Pressure using Van der Waal's Equations</a></li><br><br>
-            <li><a href="ct.html" class="bread">Roots of Polynomial(Netwon-Raphson Method)</a></li><br><br>
-            <li><a href="sa.html" class="bread">Numerical integration of Trapezoid rule</a></li><br><br>
-            <li><a href="ct.html" class="bread">Numerical integration by Simpson 1/3<sup>rd</sup> rule</a></li><br> 
-      </ul>
-    </div><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
 
-    <div class="button-86" role="button" id="c1">Physics</div><br>
-    <div class="submenu" id="c1-submenu">
-      <ul>
-        <li>Submenu Item 1</li>
-        <li></li>
-      </ul>
-    </div><br> 
+        <button type="submit">Login</button><br>
+        <a href="#" id="forgotPassword">Forgot Password?</a> 
+    </form>
+</fieldset>
 
-    <div class="button-86" role="button" id="c2">Compilers</div><br>
-    <div class="submenu" id="c2-submenu">
-        <ul>
-            <li><a href="https://www.programiz.com/c-programming/online-compiler/" style="text-decoration: none;" class="bread">C Compiler</a></li>
-            <li><a href="https://www.programiz.com/python-programming/online-compiler/" class="bread">Python Compiler</a></li>
-          </ul>
-    </div><br>
-  </fieldset>
+    <script>
+        // Define the username-password pairs
+        const credentials = {
+            Jayesh:"9651",
+            user2: "password2",
+            // Add more username-password pairs as needed
+        };
 
+        // Add an event listener for form submission
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the form from submitting normally
 
-  <script>
-    // Function to toggle submenu display
-    function toggleSubmenu(id) {
-      const submenu = document.getElementById(id + '-submenu');
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-    }
+            // Get the values entered by the user
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
 
-    // Add click event listeners to menu buttons
-    
-    document.getElementById('p2').addEventListener('click', () => toggleSubmenu('p2'));
-    document.getElementById('c1').addEventListener('click', () => toggleSubmenu('c1'));
-    document.getElementById('c2').addEventListener('click', () => toggleSubmenu('c2'));
+            // Check if the entered credentials match the defined pairs
+            if (credentials.hasOwnProperty(enteredUsername) && credentials[enteredUsername] === enteredPassword) {
+                // Redirect to page2.html
+                window.location.href = "demo.html";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+        const forgotPasswordLink = document.getElementById("forgotPassword");
+        forgotPasswordLink.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent the link from navigating
 
+            // Display a popup asking the user to contact their department
+            alert("It's impossible bruh");
+        });
+        
 
-    // Add click event listeners to menu buttons
-    document.getElementById('p1').addEventListener('click', () => toggleSubmenu('p1'));
-    // Add click event listeners to submenu items (anchor links)
-    const submenuItems = document.querySelectorAll('.submenu ul li a');
-    submenuItems.forEach((item) => {
-      item.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default link behavior
-        window.location.href = event.target.getAttribute('href'); // Navigate to the href attribute
-      });
-    });
-  </script>
-    <footer>
-      &copy; Physics Journal as Project for TYBSc.
-  </footer>
+    </script>
 </body>
 </html>
