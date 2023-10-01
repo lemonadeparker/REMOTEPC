@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login * AGC</title>
     <style>
         body{
             text-align: center;
             padding-top: 40%;
-            background-color: black;
+            background-color: rgb(0, 0, 0);
         }
         fieldset {
   margin: 20px;
@@ -88,25 +88,44 @@
     </style>
 </head>
 <body>
-    <fieldset>
+    <fieldset style="background-color: rgb(29, 27, 27);">
     <img src="haha.png" style="width: 50%;"> 
     <form id="loginForm">
         <label for="username" style="color: aliceblue;">Username:</label>
-        <input type="text" id="username" required><br><br>
+        <input type="text" id="username" placeholder="Your name" required><br><br>
 
         <label for="password" style="color: aliceblue;">Password:</label>
-        <input type="password" id="password" required><br><br><br>
+        <input type="password" id="password" placeholder="Roll Number" required><br><br><br>
         <button class="button-85" role="button">Login</button><br><br>
-        <a href="#" id="forgotPassword" style="color: aliceblue;">Forgot Password?</a> 
+        <a href="#" id="forgotPassword" style="color: aliceblue; text-align: right;">Forgot Password?</a> 
     </form>
-</fieldset>
+</fieldset> 
+<a href="https://github.com/schrodingear/practicaljournalforgac"><img src="get-it-on-github.png" targe style="width: 40%; padding-top: 10%;"></a>
 
     <script>
         // Define the username-password pairs
         const credentials = {
-            Jayesh:"9651",
-            user2: "password2",
-            // Add more username-password pairs as needed
+            Gauri: "8601",
+            Sakshi: "8602",
+            Suraj: "8603",
+            Harshad: "8604",
+            Satish: "8605",
+            Sanika: "8606",
+            Sahil: "8607",
+            Vedant: "8608",
+            Rigveda: "8609",
+            Sharika: "8610",
+            Radha: "8611",
+            Mihir: "8612",
+            Avantika: "8613",
+            Omkar: "8614",
+            Urvee: "8615",
+            Vyankateshwar: "8616",
+            Shreyash: "8617",
+            Prajot: "8618",
+            Priti: "8619",
+            Rutik: "8620"
+            // Add more username  -password pairs as needed
         };
 
         // Add an event listener for form submission
@@ -120,8 +139,10 @@
 
             // Check if the entered credentials match the defined pairs
             if (credentials.hasOwnProperty(enteredUsername) && credentials[enteredUsername] === enteredPassword) {
-                // Redirect to page2.html
-                window.location.href = "demo.html";
+                localStorage.setItem("username", enteredUsername);
+
+        // Redirect to page2.html
+        window.location.href = "page2.html";
             } else {
                 alert("Invalid credentials. Please try again.");
             }
@@ -133,6 +154,7 @@
             // Display a popup asking the user to contact their department
             alert("It's impossible bruh");
         });
+        
         
 
     </script>
