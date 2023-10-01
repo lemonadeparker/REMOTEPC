@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical Journal</title>
+
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p, div, fieldset, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Global styles */
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #0f0e0e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+    /* Navigation menu styles */
+    .nav-menu {
+      background-color: #444;
+      color: #fff;
+      
+      height: 100%;
+      width: 250px; /* Width of the side panel */
+      position: fixed;
+      top: 0;
+      left: -250px; /* Hide the panel by default */
+      overflow-x: hidden;
+      transition: 0.5s; /* Add a smooth transition when sliding in the panel */
+    }
+
+    .nav-menu.show {
+      left: 0; /* Show the panel when the "show" class is added */
+    }
+
+    /* Menu button styles */
+    .menu-button {
+      cursor: pointer;
+      margin: 10px;
+      padding: 5px;
+      background-color: #333;
+      color: beige;
+      border: 1px solid beige;
+      border-radius: 5px;
+    }
+
+    /* Submenu styles */
+    .submenu {
+      display: none;
+      padding-left: 20px;
+    }
+
+    /* List item styles */
+    .menu-item {
+      list-style-type: none;
+    }
+
+    /* Styling for links */
+    .menu-link {
+      color: beige;
+      text-decoration: none;
+    }
+
+    /* Show submenu when menu item is hovered */
+    .menu-item:hover .submenu {
+      display: block;
+    }
+    :focus {
+      outline: none;
+    }
+    
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Navigation menu button -->
+  
+    <a href="https://garwarecollege.mespune.in"><img src="haha.png" width="50%" class="vl"></a> 
+    <h1>Physics Department</h1><br><br>
+    <p class="nav">“The laws of physics are the canvas God laid down on which to paint his masterpiece” - Dan Brown.</p>
+    <div class="menu-button" onclick="toggleNav()">=</div>
+  </header>
+
+  <!-- Side navigation menu -->
+  <div class="nav-menu" id="navMenu">
+    <img src="haha.png" width="60%" style="text-align: center;">
+    <ul>
+      <li class="menu-item">
+        <a href="#" class="menu-link">Paper-I</a>
+        <ul class="submenu">
+          <li><a href="y.html" class="menu-link">'Y' by vibration of wooden scale</a></li>
+          <li><a href="mb.html" class="menu-link">Moment of inertia by bifilar suspension</a></li>
+          <li><a href="sf.html" class="menu-link">Surface tension by Fergusson Method</a></li>
+          <li><a href="sa.html" class="menu-link">Self Induction by Anderson's bridge</a></li>
+          <li><a href="ct.html" class="menu-link">Core losses in Transformers</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        
+        <a href="#" class="menu-link">Paper-II</a>
+        <ul class="submenu">
+          <li><a href="y.html" class="menu-link">Factorial of a number using simple and recursive method</a></li>
+          <li><a href="mb.html" class="menu-link">To find out the first 100 Prime Numbers</a></li>
+          <li><a href="sf.html" class="menu-link">Position-time data using kinematic equations</a></li>
+          <li><a href="sa.html" class="menu-link">Pressure using Van der Waal's Equations</a></li>
+          <li><a href="ct.html" class="menu-link">Roots of Polynomial (Newton-Raphson Method)</a></li>
+          <li><a href="sa.html" class="menu-link">Numerical integration of Trapezoid rule</a></li>
+          <li><a href="ct.html" class="menu-link">Numerical integration by Simpson 1/3rd rule</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">Physics</a>
+        <!-- Add more submenu items as needed -->
+        <ul class="submenu">
+          <li><a href="#" class="menu-link">Submenu Item 1</a></li>
+          <li><a href="#" class="menu-link">Submenu Item 2</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">Compilers</a>
+        <!-- Add more submenu items as needed -->
+        <ul class="submenu">
+          <li><a href="https://www.programiz.com/c-programming/online-compiler/" class="menu-link">C Compiler</a></li>
+          <li><a href="https://www.programiz.com/python-programming/online-compiler/" class="menu-link">Python Compiler</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Function to toggle the side navigation menu
+    function toggleNav() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+    }   
+    // Retrieve the username from local storage
+    const username = localStorage.getItem("username");
+
+    if (username) {
+      // Display the "Hello username" message
+      const greetingElement = document.createElement("p");
+      greetingElement.textContent = `Hello ${username},`;
+      document.body.appendChild(greetingElement);
+      greetingElement.style.fontSize = "50px";
+      greetingElement.style.textAlign = "center"
+      
+    } else {
+      // Handle the case when the username is not found
+      // (e.g., user did not log in)
+    }
+
+  </script>
+
+  <footer>
+    &copy; Physics Journal as a Project for TYBSc.
+  </footer>
+</body>
+</html>
