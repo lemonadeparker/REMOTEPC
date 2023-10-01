@@ -84,7 +84,32 @@
     :focus {
       outline: none;
     }
-    
+    /* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the navigation links */
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
     
 
   </style>
@@ -98,11 +123,23 @@
     <p class="nav">“The laws of physics are the canvas God laid down on which to paint his masterpiece” - Dan Brown.</p>
     <div class="menu-button" onclick="toggleNav()">=</div>
   </header>
+  <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
+<ul id="myMenu">
+  <li><a href="#">To find out first 100 prime numbers</a></li>
+  <li><a href="#">CSS</a></li>
+  <li><a href="#">JavaScript</a></li>
+  <li><a href="#">PHP</a></li>
+  <li><a href="#">Python</a></li>
+  <li><a href="#">jQuery</a></li>
+  <li><a href="#">SQL</a></li>
+  <li><a href="#">Bootstrap</a></li>
+  <li><a href="#">Node.js</a></li>
+</ul>
   <!-- Side navigation menu -->
   <div class="nav-menu" id="navMenu">
     <img src="haha.png" width="60%" style="text-align: center;">
-    <ul>
+    <ul><h3>Sem V</h3>
       <li class="menu-item">
         <a href="#" class="menu-link">Paper-I</a>
         <ul class="submenu">
@@ -126,6 +163,31 @@
           <li><a href="ct.html" class="menu-link">Numerical integration by Simpson 1/3rd rule</a></li>
         </ul>
       </li>
+      <h3>Sem VI</h3>
+      <li class="menu-item">
+        <a href="#" class="menu-link">Paper-I</a>
+        <ul class="submenu">
+          <li><a href="y.html" class="menu-link">'Y' by vibration of wooden scale</a></li>
+          <li><a href="mb.html" class="menu-link">Moment of inertia by bifilar suspension</a></li>
+          <li><a href="sf.html" class="menu-link">Surface tension by Fergusson Method</a></li>
+          <li><a href="sa.html" class="menu-link">Self Induction by Anderson's bridge</a></li>
+          <li><a href="ct.html" class="menu-link">Core losses in Transformers</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        
+        <a href="#" class="menu-link">Paper-II</a>
+        <ul class="submenu">
+          <li><a href="y.html" class="menu-link">Factorial of a number using simple and recursive method</a></li>
+          <li><a href="mb.html" class="menu-link">To find out the first 100 Prime Numbers</a></li>
+          <li><a href="sf.html" class="menu-link">Position-time data using kinematic equations</a></li>
+          <li><a href="sa.html" class="menu-link">Pressure using Van der Waal's Equations</a></li>
+          <li><a href="ct.html" class="menu-link">Roots of Polynomial (Newton-Raphson Method)</a></li>
+          <li><a href="sa.html" class="menu-link">Numerical integration of Trapezoid rule</a></li>
+          <li><a href="ct.html" class="menu-link">Numerical integration by Simpson 1/3rd rule</a></li>
+        </ul>
+      </li> 
+
       <li class="menu-item">
         <a href="#" class="menu-link">Physics</a>
         <!-- Add more submenu items as needed -->
@@ -157,9 +219,9 @@
     if (username) {
       // Display the "Hello username" message
       const greetingElement = document.createElement("p");
-      greetingElement.textContent = `Hello ${username},`;
+      greetingElement.textContent = `Welcome ${username}!`;
       document.body.appendChild(greetingElement);
-      greetingElement.style.fontSize = "50px";
+      greetingElement.style.fontSize = "20px";
       greetingElement.style.textAlign = "center"
       
     } else {
@@ -168,6 +230,26 @@
     }
 
   </script>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script> 
 
   <footer>
     &copy; Physics Journal as a Project for TYBSc.
