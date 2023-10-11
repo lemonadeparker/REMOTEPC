@@ -110,7 +110,7 @@
 #myMenu li a:hover {
   background-color: #eee;
 }
-fieldset, header {
+fieldset{
   margin: 20px;
   padding: 0 10px 10px;
   border: 1px solid #666;
@@ -119,6 +119,10 @@ fieldset, header {
   padding-top: 10px;
   
 }    
+header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
 
   </style>
 </head>
@@ -132,7 +136,7 @@ fieldset, header {
     <h1>Physics Department</h1><br><br>
     <p class="nav">“The laws of physics are the canvas God laid down on which to paint his masterpiece” - Dan Brown.</p>
     <div class="menu-button" onclick="toggleNav()">=</div>
-  </header>
+  </header><br>   
   <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category" style="width:94%;">
 
   <ul id="myMenu">
