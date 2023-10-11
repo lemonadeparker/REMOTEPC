@@ -11,6 +11,12 @@
       margin: 0;
       padding: 0;
     }
+    body{
+      background-color: #333;
+    }
+    ul{
+      color: white;
+    }
 
     /* Global styles */
     body {
@@ -19,16 +25,17 @@
 
     /* Header styles */
     header {
-      background-color: #0f0e0e;
+      background-color: #000751;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
     footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #000751;
+            color: #ffeeee;
             text-align: center;
             padding: 10px;
+            border-radius: 30px;
         }
 
     /* Navigation menu styles */
@@ -103,12 +110,12 @@
 #myMenu li a {
   padding: 12px;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   display: block
 }
 
 #myMenu li a:hover {
-  background-color: #eee;
+  background-color: #000000;
 }
 fieldset{
   margin: 20px;
@@ -117,11 +124,71 @@ fieldset{
   border-radius: 20px;
   box-shadow: 0 0 10px #666;
   padding-top: 10px;
+  background-color: black;
+  color: #ddd;
   
 }    
 header {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+}
+p {
+    color: white;
+    
+}
+/* CSS */
+.button-64 {
+  display: block;
+    margin: auto;
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding:6px 6px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+textarea{
+  border-radius: 10px;
 }
 
   </style>
@@ -192,7 +259,7 @@ header {
             return 0;
         }
     </textarea>
-    <button onclick="copyToClipboard('code1')">Copy</button>
+    <button onclick="copyToClipboard('code1')" class="button-64" role="button"><span class="text">Copy!</span></button>
     
 </div>
 
@@ -215,7 +282,7 @@ header {
             return 0;
         }
     </textarea>
-    <button onclick="copyToClipboard('code2')">Copy</button>
+    <button onclick="copyToClipboard('code2')" id="butt">Copy</button>
 </div>
 
 <div id="code3" style="display: none;">
@@ -231,7 +298,7 @@ header {
           return 0;
       }
   </textarea>
-  <button onclick="copyToClipboard('code3')">Copy</button>
+  <button onclick="copyToClipboard('code3')" id="butt">Copy</button>
 </div>
 <div id="code4" style="display: none;">
   <textarea rows="20" cols="35">
@@ -255,13 +322,13 @@ header {
           return 0;
       }
   </textarea>
-  <button onclick="copyToClipboard('code4')">Copy</button>
+  <button onclick="copyToClipboard('code4')" id="butt">Copy</button>
 </div>
 <div id="code5" style="display: none;">
   <textarea rows="20" cols="35">
     
   </textarea>
-  <button onclick="copyToClipboard('code5')">Copy</button>
+  <button onclick="copyToClipboard('code5')" id="butt">Copy</button>
 </div>
 <script>
     function showCode(codeId) {
@@ -424,7 +491,7 @@ if (username) {
       }
     }
     </script> 
-
+<br>
   <footer>
     &copy; Physics Journal as a Project for TYBSc.
   </footer>
