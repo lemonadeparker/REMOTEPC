@@ -125,17 +125,78 @@
   </header>
   <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
-<ul id="myMenu">
-  <li><a href="#">To find out first 100 prime numbers</a></li>
-  <li><a href="#">CSS</a></li>
-  <li><a href="#">JavaScript</a></li>
-  <li><a href="#">PHP</a></li>
-  <li><a href="#">Python</a></li>
-  <li><a href="#">jQuery</a></li>
-  <li><a href="#">SQL</a></li>
-  <li><a href="#">Bootstrap</a></li>
-  <li><a href="#">Node.js</a></li>
-</ul>
+  <ul id="myMenu">
+  
+    <li><a href="#" onclick="showCode('code1')">To find out first 100 prime numbers</a></li>
+    <li><a href="#" onclick="showCode('code2')">JavaScript</a></li>
+    <li><a href="#" onclick="showCode('code3')">PHP</a></li>
+
+    <!-- Add more list items as needed -->
+  </ul>
+
+  <div id="code1" style="display: none;">
+    <pre><code class="language-c">
+      #include <stdio.h>
+      
+      int main() {
+          printf("lo, World!\n");
+          return 0;
+      }
+    </code></pre>
+    <button onclick="copyToClipboard('code1')">Copy</button>
+    
+  </div>
+
+  <div id="code2" style="display: none;">
+    <pre><code class="language-c">
+      #include <stdio.h>
+      
+      int main() {
+          printf("Hello, World!\n");
+          return 0;
+      }
+    </code></pre>
+    <button onclick="copyToClipboard('code1')">Copy</button>
+  </div>
+
+  <div id="code3" style="display: none;">
+    <pre><code class="language-c">
+      #include <stdio.h>
+      
+      int main() {
+          printf("Hello, World!\n");
+          return 0;
+      }
+    </code></pre>
+    <button onclick="copyToClipboard('code1')">Copy</button>
+  </div>
+  <script>
+    function showCode(codeId) {
+      var codeElement = document.getElementById(codeId);
+      if (codeElement) {
+        // Hide all code elements
+        var codeElements = document.querySelectorAll('div[id^="code"]');
+        codeElements.forEach(function (element) {
+          element.style.display = 'none';
+        });
+
+        // Show the selected code element
+        codeElement.style.display = 'block';
+      }
+    }
+    function copyToClipboard(codeId) {
+      var codeElement = document.getElementById(codeId);
+      var range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      
+      // Notify the user that the code is copied
+      alert('Code copied to clipboard!');
+    }
+  </script>
   <!-- Side navigation menu -->
   <div class="nav-menu" id="navMenu">
     <img src="haha.png" width="60%" style="text-align: center;">
@@ -216,18 +277,37 @@
     // Retrieve the username from local storage
     const username = localStorage.getItem("username");
 
-    if (username) {
-      // Display the "Hello username" message
-      const greetingElement = document.createElement("p");
-      greetingElement.textContent = `Welcome ${username}!`;
-      document.body.appendChild(greetingElement);
-      greetingElement.style.fontSize = "20px";
-      greetingElement.style.textAlign = "center"
-      
-    } else {
-      // Handle the case when the username is not found
-      // (e.g., user did not log in)
-    }
+if (username) {
+  // Display the greeting message based on the time of day
+  const greetingElement = document.createElement("p");
+  const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+
+  let greetingMessage = "Hello, " + username + "!";
+
+  if (currentHour >= 5 && currentHour < 12) {
+    greetingMessage = "Good morning, " + username + "!";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greetingMessage = "Good afternoon, " + username + "!";
+  } else if (currentHour >= 18 && currentHour < 22) {
+    greetingMessage = "Good evening, " + username + "!";
+  } else {
+    greetingMessage = "Good night, " + username + "!";
+  }
+
+  greetingElement.textContent = greetingMessage;
+  greetingElement.style.fontSize = "20px";
+  greetingElement.style.textAlign = "center";
+  document.body.appendChild(greetingElement);
+} else {
+  // Handle the case when the username is not found
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent = "Please log in to see the greeting message.";
+  errorMessage.style.fontSize = "20px";
+  errorMessage.style.textAlign = "center";
+  document.body.appendChild(errorMessage);
+}
+
 
   </script>
   <script>
