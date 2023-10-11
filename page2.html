@@ -20,7 +20,7 @@
 
     /* Global styles */
     body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Lato", sans-serif;
     }
 
     /* Header styles */
@@ -40,9 +40,13 @@
 
     /* Navigation menu styles */
     .nav-menu {
+      
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
       background-color: #444;
       color: #fff;
-      
       height: 100%;
       width: 250px; /* Width of the side panel */
       position: fixed;
@@ -116,6 +120,14 @@
 
 #myMenu li a:hover {
   background-color: #000000;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 fieldset{
   margin: 20px;
@@ -191,30 +203,28 @@ textarea{
   border-radius: 10px;
 }
 
+
   </style>
 </head>
 <body>
   <div></div>
   <fieldset>
   <header>
+    <div id="greeting-message" style="font-size: 20px; text-align: center;"></div>
     <!-- Navigation menu button -->
-  
+    <div class="menu-button" onclick="toggleNav()" style="margin-left: 90%; width: 20px;">=</div>
     <a href="https://garwarecollege.mespune.in"><img src="haha.png" width="50%" class="vl"></a> 
     <h1>Physics Department</h1><br><br>
-    <p class="nav">“The laws of physics are the canvas God laid down on which to paint his masterpiece” - Dan Brown.</p>
-    <div class="menu-button" onclick="toggleNav()">=</div>
+    <p class="nav">“The laws of physics are the canvas God laid down on which to paint his masterpiece” - Dan Brown.</p><br>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category" style="width:94%;">
   </header><br>   
-  <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category" style="width:94%;">
-
-  <ul id="myMenu">
   
+  <ul id="myMenu">
     <li><a href="#" onclick="showCode('code1')">To find out first 100 prime numbers</a></li>
     <li><a href="#" onclick="showCode('code2')">To compute exponential zeroes</a></li>
     <li><a href="#" onclick="showCode('code3')">To sum square of all integers from 1 to 5</a></li>
     <li><a href="#" onclick="showCode('code4')">To sort numbers in descending order</a></li>
     <li><a href="#" onclick="showCode('code5')">To find integration using Simpson's 1/3<sup>rd</sup>rule</a></li>
-    
-
     <!-- Add more list items as needed -->
   </ul>
 
@@ -331,6 +341,7 @@ textarea{
   <button onclick="copyToClipboard('code5')" id="butt">Copy</button>
 </div>
 <script>
+
     function showCode(codeId) {
       var codeElement = document.getElementById(codeId);
       if (codeElement) {
@@ -360,8 +371,8 @@ textarea{
 </script>
   <!-- Side navigation menu -->
   <div class="nav-menu" id="navMenu">
-    <img src="haha.png" width="60%" style="text-align: center;">
-    <ul><h3>Sem V</h3>
+    <div style="background-color: #000751; text-align: center;"><img src="haha.png" width="70%" style="text-align: center;"></div>
+    <ul style="padding-left: 20px;"><h3>Sem V</h3>
       <li class="menu-item">
         <a href="#" class="menu-link">Paper-I</a>
         <ul class="submenu">
@@ -372,6 +383,7 @@ textarea{
           <li><a href="ct.html" class="menu-link">Core losses in Transformers</a></li>
         </ul>
       </li>
+      
       <li class="menu-item">
         
         <a href="#" class="menu-link">Paper-II</a>
@@ -430,6 +442,36 @@ textarea{
   </div>
 
   <script>
+    var initialX = null;
+
+document.addEventListener('touchstart', startTouch, false);
+document.addEventListener('touchmove', moveTouch, false);
+
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+}
+
+function moveTouch(e) {
+  if (initialX === null) {
+    return;
+  }
+
+  var currentX = e.touches[0].clientX;
+  
+  var diffX = initialX - currentX;
+
+  if (Math.abs(diffX) > 150) { //threshold value
+    if (diffX > 0) {
+      // swiped left
+      document.getElementById("navMenu").style.width = "0";
+    } else {
+      // swiped right
+      document.getElementById("navMenu").style.width = "250px";
+    }  
+  }
+
+  initialX = null;
+}
     // Function to toggle the side navigation menu
     function toggleNav() {
       const navMenu = document.getElementById('navMenu');
