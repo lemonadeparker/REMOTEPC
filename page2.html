@@ -372,9 +372,9 @@ if (n <= 1) {
 </script>
   <!-- Side navigation menu -->
   <div class="nav-menu" id="navMenu">
-    <div style="background-color: #000751; border-radius: 20px;"><img src="haha.png" width="60%">
-        <p id="name" style="color: white;">   </p>
-        <p id="pass" style="color: white;"></p>
+    <div style="background-color: #000751; border-radius: 20px;"><img src="pract.png" width="60%">
+        <p id="greeting" style="font-size: 20px; color: #023bad; margin-left: 0.5cm;"></p>
+
     </div>
     <script>
         // Retrieve the username and password from local storage
@@ -383,7 +383,7 @@ if (n <= 1) {
 
         if (name) {
             // Display the username in the #name element
-            const nameElement = document.getElementById("name");
+            const nameElement = document.getElementById( "name");
             nameElement.textContent = name; // Display "Username:" before the username
             nameElement.style.fontSize = "20px";
         }
@@ -460,7 +460,7 @@ if (n <= 1) {
         <a href="#" class="menu-link">Compilers</a>
         <!-- Add more submenu items as needed -->
         <ul class="submenu" style="list-style: none;">
-          <li><a href= "https://play.google.com/store/apps/details?id=com.kvassyu.coding2.c&hl=en&gl=US&pli=1" class="menu-link">Coding C(APP)</a></li>
+          <li<a href="https://play.google.com/store/apps/details?id=com.kvassyu.coding2.c&hl=en&gl=US&pli=1" class="menu-link">Coding C(APP)</a>
           <li><a href="https://www.programiz.com/c-programming/online-compiler/" class="menu-link">C Compiler</a></li>
           <li><a href="https://www.programiz.com/python-programming/online-compiler/" class="menu-link">Python Compiler</a></li>
         </ul>
@@ -487,10 +487,9 @@ if (n <= 1) {
     }
     // Retrieve the username from local storage
     const username = localStorage.getItem("username");
+    const greetingElement = document.getElementById("greeting");
 
 if (username) {
-  // Display the greeting message based on the time of day
-  const greetingElement = document.createElement("p");
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
 
@@ -507,18 +506,10 @@ if (username) {
   }
 
   greetingElement.textContent = greetingMessage;
-  greetingElement.style.fontSize = "20px";
-  greetingElement.style.textAlign = "center";
-  document.body.appendChild(greetingElement);
 } else {
   // Handle the case when the username is not found
-  const errorMessage = document.createElement("p");
-  errorMessage.textContent = "Please log in to see the greeting message.";
-  errorMessage.style.fontSize = "20px";
-  errorMessage.style.textAlign = "center";
-  document.body.appendChild(errorMessage);
+  greetingElement.textContent = "Please log in to see the greeting message.";
 }
-
 
   </script>
   <script>
