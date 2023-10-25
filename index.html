@@ -1,49 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        .heart {
-            position: relative;
-            width: 100px;
-            height: 90px;
-            background: red;
-            transform: rotate(-45deg);
-            margin: 50px;
-        }
-
-        .heart::before, .heart::after {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: red;
-        }
-
-        .heart::before {
-            border-radius: 100px 100px 0 0;
-            top: -50px;
-            left: 0;
-        }
-
-        .heart::after {
-            border-radius: 100px 100px 100px 0;
-            top: 0;
-            left: 50px;
-        }
-
-        .name {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: white;
-        }
+        body {
+        background-image: url('butt.png');
+      }
     </style>
 </head>
 <body>
-    <div class="heart">
-        <div class="name">Pooja</div>
-    </div>
+    <h1 style="text-align: center; padding-top: 200px;">Pooja is love</h1> 
 </body>
 </html>
