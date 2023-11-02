@@ -7,7 +7,7 @@
     <style>
         body{
             text-align: center;
-            padding-top: 40%;
+            padding-top: 30%;
             background-color: rgb(0, 0, 0);
         }
         fieldset {
@@ -22,81 +22,42 @@
 /* CSS */
 .button-85 {
   padding: 0.6em 2em;
-  border: none;
-  outline: none;
+  border-color: #666;
+  
   color: rgb(255, 255, 255);
   background: #111;
   cursor: pointer;
   position: relative;
-  z-index: 0;
+  
   border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
+  
   touch-action: manipulation;
 }
+input{
+    border-radius: 10px;
+    text-align: center;
+    height: 30px;
+    font-size: 100%;
 
-.button-85:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
 }
+p, a{
+    color: rgb(113, 114, 110);
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+    font-weight: bolder;
 
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
-
-.button-85:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
     </style>
 </head>
 <body>
-    <fieldset style="background-color: rgb(89, 0, 255);">
-    <img src="haha.png" style="width: 50%;">
-    <form id="loginForm">
-        <label for="username" style="color: aliceblue;">Username:</label>
-        <input type="text" id="username" placeholder="Your name" required><br><br>
+    <fieldset style="background-color: rgb(20, 20, 20);">
+    <img src="haha.png" style="width: 50%;"><br>
 
-        <label for="password" style="color: aliceblue;">Password:</label>
-        <input type="password" id="password" placeholder="Roll Number" required><br><br><br>
+    <p> DIGITAL LABORATORY</p>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Your name/ Admin" required><br><br>
+        <input type="password" id="password" placeholder="Roll Number/ 8600" required><br><br><br>
         <button class="button-85" role="button">Login</button><br><br>
         <a href="#" id="forgotPassword" style="color: aliceblue; text-align: right;">Forgot Password?</a> 
     </form>
@@ -148,7 +109,8 @@
             Srushti: "8641",
             Kalpesh: "8642",
             Ruturaj: "8643",
-            Asmita: "8644"
+            Asmita: "8644",
+            Admin: "8600"
             //password pairs as needed
         };
 
@@ -167,7 +129,7 @@
                 
 
         // Redirect to page2.html
-        window.location.href = "page2.html";
+        window.location.href = "menu.html";
             } else {
                 alert("Invalid credentials. Please try again.");
             }
